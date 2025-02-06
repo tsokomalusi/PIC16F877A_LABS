@@ -28,3 +28,11 @@ to ensure proper operation of the motor.
 ## Schematic capture and Proteus Simulation
 ![lab4](https://github.com/user-attachments/assets/f253d26d-e29e-447d-b6b1-b8275e4daa7f)
 
+----------------------------------------------------------------------------------------------------------------------------
+## Lab 5: Stepper Motor Controlled Motion
+The primary goals of this lab is to drive stepper motors by writing the neceessary firmware that will make the motor rotate CW
+(clockwise) when one input button is pressed and rotate CCW (counterclockwise) when another button is pressed.
+
+## Schematic capture and Proteus Simulation
+![lab5](https://github.com/user-attachments/assets/e395300b-7b5f-47c3-b313-d72da9951f04)
+
