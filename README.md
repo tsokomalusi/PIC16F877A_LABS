@@ -1,5 +1,13 @@
 # PIC16F877A_LABS
 
+Software Tools I am going to use throughout the series of these virtual labs are as follows:
+- Programming Language: C
+- IDE(Integrated Development Environment): MPLAB X
+- Compiler: xc8 
+- Simulator & Schematic capture: Proteus PRO
+- VCS (Version control System): Git and GitBasj
+- Online server: Github
+
 ## Lab 1: Flashing Leds
 In this Lab GPIO pins of the MCU are used to generate digital output signal for flashing RED, BLUE and GREEN LEDS.
 ## Proteus Simulation & Schematic capture
@@ -35,4 +43,12 @@ The primary goals of this lab is to drive stepper motors by writing the neceessa
 
 ## Schematic capture and Proteus Simulation
 ![lab5](https://github.com/user-attachments/assets/e395300b-7b5f-47c3-b313-d72da9951f04)
+
+-----------------------------------------------------------------------------------------------------------------------------
+## Lab 6: Stepper Motor Speed control
+In this Lab a firmware will be written to make this stepper motor rotate at different speed levels and hardware circuitry
+will be built to ensure the stepper motor operates as desired.
+
+## Schematic capture and simulation (Proteus)
+![lab6](https://github.com/user-attachments/assets/435b9edf-0ca3-459b-b839-facb05fb2ba3)
 
