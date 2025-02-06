@@ -5,7 +5,7 @@ Software Tools I am going to use throughout the series of these virtual labs are
 - IDE (Integrated Development Environment): MPLAB X
 - Compiler: xc8 
 - Simulator & Schematic capture: Proteus PRO
-- VCS (Version control System): Git and GitBasj
+- VCS (Version control System): Git and GitBash
 - Online server: Github
 
 ## Lab 1: Flashing Leds
