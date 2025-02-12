@@ -8,6 +8,9 @@ Software Tools I am going to use throughout the series of these virtual labs are
 - VCS (Version control System): Git and GitBash
 - Online server: Github
 
+ Resources
+ 
+
 ## Lab 1: Flashing Leds
 In this Lab GPIO pins of the MCU are used to generate digital output signal for flashing RED, BLUE and GREEN LEDS.
 ## Proteus Simulation & Schematic capture
