@@ -8,7 +8,9 @@ Software Tools I am going to use throughout the series of these virtual labs are
 - VCS (Version control System): Git and GitBash
 - Online server: Github
 
- Resources
+ Resources:
+ https://deepbluembedded.com/pic-programming-tutorials/
+ [Deep Blue](https://deepbluembedded.com/pic-programming-tutorials/)
  
 
 ## Lab 1: Flashing Leds
