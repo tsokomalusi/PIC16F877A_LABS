@@ -63,3 +63,12 @@ system based on polling method.
 
 ## Schematic capture and simulation (Proteus)
 ![lab7](https://github.com/user-attachments/assets/3a6c1225-6179-4380-ac98-d39cca5c3233)
+
+## Lab 8: Generate 1s delay with PIC TIMER1 
+In this lab, PIC TIMER1 module is configured to operate in timer mode with an aim to generate 1s time interval/delay 
+between 2 events which is switching on the LED (event1) and then off (event2) after this modules fires an interrupt signal to the MCU CPU.
+
+## Schematic capture and simulation (Proteus)
+![lab8](https://github.com/user-attachments/assets/ab538540-3c70-4b94-8aec-53239f13145c)
+
+
