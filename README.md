@@ -71,4 +71,6 @@ between 2 events which is switching on the LED (event1) and then off (event2) af
 ## Schematic capture and simulation (Proteus)
 ![lab8](https://github.com/user-attachments/assets/ab538540-3c70-4b94-8aec-53239f13145c)
 
-
+## Lab 8: Generate 1s delay with TIMER Preloader
+This lab builds on the preceding Lab which had small time error. The aim of this lab is to a generate 100% 1sec time interval.
+The calculations involved to prove and solve this error are attached herein this repository.
