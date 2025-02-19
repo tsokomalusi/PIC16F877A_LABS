@@ -73,4 +73,15 @@ between 2 events which is switching on the LED (event1) and then off (event2) af
 
 ## Lab 8: Generate 1s delay with TIMER Preloader
 This lab builds on the preceding Lab which had small time error. The aim of this lab is to a generate 100% 1sec time interval.
-The calculations involved to prove and solve this error are attached herein this repository.
+The calculations involved to prove and solve this error are attached herein this repository and can be found by following this file path
+Lab9/Timer1_1s_time_interval.docx .
+## Schematic capture and simulation (Proteus)
+Refer to Lab8.
+
+## CRO Oscilloscope Outputs
+1sec time delay generated without Timer Preloading Techinque (not accurate)
+
+![lab8_time_error](https://github.com/user-attachments/assets/53a66b83-0acb-4deb-8486-cbe0a2e6b8df)
+
+1sec time delay generated with Timer Preloading Techinque (100% accurate)
+![lab9](https://github.com/user-attachments/assets/c3d901e6-a293-4dc7-b2ce-ad653b408be8)
