@@ -5,7 +5,7 @@ Software Tools I am going to use throughout the series of these virtual labs are
 - IDE (Integrated Development Environment): MPLAB X
 - Compiler: xc8 
 - Simulator & Schematic capture: Proteus PRO
-- VCS (Version control System): Git and GitBash
+- VCS (Version control System): Git/GitBash
 - Online server: Github
 
  Resources:
@@ -85,3 +85,11 @@ Refer to Lab8.
 
 1sec time delay generated with Timer Preloading Techinque (100% accurate)
 ![lab9](https://github.com/user-attachments/assets/c3d901e6-a293-4dc7-b2ce-ad653b408be8)
+
+## Lab 10: IRQ PIN (External Interrupt)
+In this lab a laggy routine of an LED that's blinking once/2sec with _delay() macro is going to be created.And then
+configure another LED output pin in order to toggle upon each rising edge on the RB0 pin IRQ pin.
+
+## Schematic capture and Proteus simulation
+![lab10](https://github.com/user-attachments/assets/0f538145-f4ea-4326-8f1d-13a0a1afbdfe)
+
