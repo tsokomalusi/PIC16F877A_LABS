@@ -91,5 +91,4 @@ In this lab a laggy routine of an LED that's blinking once/2sec with _delay() ma
 configure another LED output pin in order to toggle upon each rising edge on the RB0 pin IRQ pin.
 
 ## Schematic capture and Proteus simulation
-![lab10](https://github.com/user-attachments/assets/0f538145-f4ea-4326-8f1d-13a0a1afbdfe)
-
+![lab10](https://github.com/user-attachments/assets/690cf0dd-87a5-4bb8-b2d4-2e465feef75f)
