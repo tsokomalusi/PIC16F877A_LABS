@@ -14,19 +14,19 @@ Software Tools I am going to use throughout the series of these virtual labs are
  
 
 ## Lab 1: Flashing Leds
-In this Lab GPIO pins of the MCU are used to generate digital output signal for flashing RED, BLUE and GREEN LEDS.
+In this Lab, GPIO pins of the MCU are used to generate digital output signal for flashing RED, BLUE and GREEN LEDS.
 ## Proteus Simulation & Schematic capture
 ![lab1](https://github.com/user-attachments/assets/4d7629dc-a67f-47fd-8336-293fb9f688a8)
 
 ---------------------------------------------------------------------------------------------------------------------------
 ## Lab 2: Reading digital inputs
-In this Lab GPIO pins of the PIC are used for reading digital input signal, which is then used to control the flashing of an LED (BLUE)
+In this Lab, GPIO pins of the PIC are used for reading digital input signal, which is then used to control the flashing of an LED (BLUE)
 ## Schematic capture and Proteus Simulation
 ![lab2](https://github.com/user-attachments/assets/37fd38ab-6bbd-44a4-af92-cd852cc0be19)
 
 -----------------------------------------------------------------------------------------------------------------------------
 ## Lab 3: Counting with 7 Segments Display
-In this lab it will be demonstrated how to use GPIO to control and interface the Segment to PIC16F877A MCU.
+In this lab, it will be demonstrated how to use GPIO to control and interface the Segment to PIC16F877A MCU.
 Main aim of this lab is to print out numerical data (0 -9) using 7 Segment display
 
 ## Schematic capture and Proteus simulation
@@ -51,7 +51,7 @@ The primary goals of this lab is to drive stepper motors by writing the neceessa
 
 -----------------------------------------------------------------------------------------------------------------------------
 ## Lab 6: Stepper Motor Speed control
-In this Lab a firmware will be written to make this stepper motor rotate at different speed levels and hardware circuitry
+In this Lab, a firmware will be written to make this stepper motor rotate at different speed levels and hardware circuitry
 will be built to ensure the stepper motor operates as desired.
 
 ## Schematic capture and simulation (Proteus)
@@ -87,15 +87,15 @@ Refer to Lab8.
 ![lab9](https://github.com/user-attachments/assets/c3d901e6-a293-4dc7-b2ce-ad653b408be8)
 
 ## Lab 10: IRQ PIN (External Interrupt)
-In this lab a laggy routine of an LED that's blinking once/2sec with _delay() macro is going to be created.And then
+In this lab  a laggy routine of an LED that's blinking once/2sec with _delay() macro is going to be created.And then
 configure another LED output pin in order to toggle upon each rising edge on the RB0 pin IRQ pin.
 
 ## Schematic capture and Proteus simulation
 ![lab10](https://github.com/user-attachments/assets/690cf0dd-87a5-4bb8-b2d4-2e465feef75f)
 
 ## Lab 11: Interrupt-Driven vs Pollling
-This lab builds on the previous and improvement of Lab7 where I did not get the expected results due to not
-utilizing Interrupt Request (IRQ).Herein this lab it is demonstrated how an interrupt-driven system dominate
+This lab builds on the previous lab and is an improvement of Lab7 where I did not get the expected results due to not
+utilizing Interrupt Request (IRQ).Herein, this lab it is demonstrated how an interrupt-driven system dominate
 polling methods due to their instantaneous response.
 
 ## Schematic capture and Proteus simulation
