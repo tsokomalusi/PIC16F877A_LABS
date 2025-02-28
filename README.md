@@ -94,8 +94,8 @@ configure another LED output pin in order to toggle upon each rising edge on the
 ![lab10](https://github.com/user-attachments/assets/690cf0dd-87a5-4bb8-b2d4-2e465feef75f)
 
 ## Lab 11: Interrupt-Driven vs Pollling
-This lab builds on the previous lab and is an improvement of Lab7 where I did not get the expected results due to not
-utilizing Interrupt Request (IRQ).Herein, this lab it is demonstrated how an interrupt-driven system dominate
+This lab builds on one of the previous labs, Lab7 particularly and it is its upgrade due to the fact that I did not get the expected results by not
+utilizing Interrupt Request (IRQ) technique.Herein, this lab it is demonstrated how an interrupt-driven system dominate
 polling methods due to their instantaneous response.
 
 ## Schematic capture and Proteus simulation
