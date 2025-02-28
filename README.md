@@ -26,7 +26,7 @@ In this Lab, GPIO pins of the PIC are used for reading digital input signal, whi
 
 -----------------------------------------------------------------------------------------------------------------------------
 ## Lab 3: Counting with 7 Segments Display
-In this lab, it will be demonstrated how to use GPIO to control and interface the 7-Segment display PIC16F877A MCU.
+In this lab, it will be demonstrated how to use GPIO to control and interface the 7-Segment display to the PIC16F877A MCU.
 Main aim of this lab is to print out numerical data (0 -9) using 7 Segment display
 
 ## Schematic capture and Proteus simulation
