@@ -34,7 +34,7 @@ Main aim of this lab is to print out numerical data (0 -9) using 7 Segment displ
 
 ----------------------------------------------------------------------------------------------------------------------------
 ## Lab 4: Driving Stepper Motor (Unipolar)
-The main obejectives of this laboratory are to operate the stepper motors and develop the necessary firmware that will make the
+The main objectives of this laboratory are to operate the stepper motors and develop the necessary firmware that will make the
 motor complete one full clockwise (CW) rotation, followed by a counterclockwise (CCW) rotation. Finally, a hardware circuitry will be built
 to ensure proper operation of the motor.
 
