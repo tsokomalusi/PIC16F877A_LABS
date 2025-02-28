@@ -43,7 +43,7 @@ to ensure proper operation of the motor.
 
 ----------------------------------------------------------------------------------------------------------------------------
 ## Lab 5: Stepper Motor Controlled Motion
-The primary goals of this lab is to drive stepper motors by writing the neceessary firmware that will make the motor rotate CW
+The primary goals of this lab is to drive stepper motors by writing the necessary firmware that will make the motor rotate CW
 (clockwise) when one input button is pressed and rotate CCW (counterclockwise) when another button is pressed.
 
 ## Schematic capture and Proteus Simulation
