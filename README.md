@@ -1,6 +1,6 @@
 # PIC16F877A_LABS
 
-Software Tools I am going to use throughout the series of these virtual labs are as follows:
+Software Tools that I am going to use throughout the series of these virtual labs are as follows:
 - Programming Language: C
 - IDE (Integrated Development Environment): MPLAB X
 - Compiler: xc8 
