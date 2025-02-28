@@ -66,7 +66,7 @@ system based on polling methods.
 
 ## Lab 8: Generate 1s delay with PIC TIMER1 
 In this lab, PIC TIMER1 module is configured to operate in timer mode with an aim to generate 1s time interval/delay 
-between 2 events which is switching on the LED (event1) and then off (event2) after this modules fires an interrupt signal to the MCU CPU.
+between 2 events which is switching on the LED (event1) and then off (event2) after this Timer1 module fires an interrupt signal to the MCU CPU.
 
 ## Schematic capture and simulation (Proteus)
 ![lab8](https://github.com/user-attachments/assets/ab538540-3c70-4b94-8aec-53239f13145c)
