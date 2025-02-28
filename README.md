@@ -1,4 +1,4 @@
-9# PIC16F877A_LABS
+# PIC16F877A_LABS
 
 Software Tools I am going to use throughout the series of these virtual labs are as follows:
 - Programming Language: C
