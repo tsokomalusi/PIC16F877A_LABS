@@ -59,7 +59,7 @@ will be built to ensure the stepper motor operates as desired.
 
 ## Lab 7: Polling vs Interrupt-driven system
 The main aim of this is to demonstrate fast reponse of the interrupt driven system compared to low responsivenes of a
-system based on polling method.
+system based on polling methods.
 
 ## Schematic capture and simulation (Proteus)
 ![lab7](https://github.com/user-attachments/assets/3a6c1225-6179-4380-ac98-d39cca5c3233)
