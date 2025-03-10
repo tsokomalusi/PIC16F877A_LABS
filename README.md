@@ -101,3 +101,10 @@ polling methods due to their instantaneous response.
 ## Schematic capture and Proteus simulation
 ![Lab11](https://github.com/user-attachments/assets/0e08d09a-cdd0-4f80-aade-79933d6eb2a0)
 
+## Lab 12: CCP1 In Capture Mode
+In this lab, it will be demonstrated how to use PIC CCP1 module in capture mode.Configure the Timer1 module in synchronous counter mode and increment its
+value by means of external push button input pulses. When the RC2/CCP1 pin is driven high (at every rising edge). The timer1 count/value will be
+ported to some GPIO (PORTD in my case) connected to a couple LEDs.
+
+## Schematic capture and Proteus simulation
+![lab12](https://github.com/user-attachments/assets/0ed56dce-c85b-40a4-b4ff-c63fc0c66f38)
