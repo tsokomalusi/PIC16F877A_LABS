@@ -108,3 +108,13 @@ ported to some GPIO (PORTD in my case) connected to a couple LEDs.
 
 ## Schematic capture and Proteus simulation
 ![lab12](https://github.com/user-attachments/assets/0ed56dce-c85b-40a4-b4ff-c63fc0c66f38)
+
+## Lab 12: CCP1 In Compare Mode
+The aim of this Lab is to use the CCP1 in compare mode in order to generate accurate time intervals utilizing timer1 module.
+We'll generate 0.5s time interval in order to toggle an LED.
+
+## Schematic capture and Proteus simulation
+![Lab13](https://github.com/user-attachments/assets/d6cceb74-69ba-4c82-9066-0ba0856836de)
+
+
+
