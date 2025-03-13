@@ -116,5 +116,11 @@ We'll generate 0.5s time interval in order to toggle an LED.
 ## Schematic capture and Proteus simulation
 ![Lab13](https://github.com/user-attachments/assets/d6cceb74-69ba-4c82-9066-0ba0856836de)
 
-
+## Lab 14: PWM LED - Dimmer
+In this lab it will be demonstarted how a PIC CCP module can be used to generate a PWM signal of 2KHz frequency and a variable duty cycle.
+The PWM output signal is going to be used to control the brightness of the LED. The duty cycle should be gradually increasing from 0 up to 100%,
+then it should start to gradually drop back to 0 %. Finally an oscilloscope is hooked to the PWM output line in order to have better insight of what
+actually is going on. Although LED dimming may not be running in real time in software simulators.
+## Schematic capture and Proteus simulation
+![Lab14](https://github.com/user-attachments/assets/2532c72e-100b-40b2-967e-ed4453572073)
 
