@@ -1,0 +1,824 @@
+
+
+Microchip MPLAB XC8 Assembler V3.00 build 20241204225717 
+                                                                                               Tue Mar 18 22:12:18 2025
+
+Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1 
+     1                           	processor	16F877A
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=CODE,space=0,merge=1,delta=2
+     5                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     6                           	psect	maintext,global,class=CODE,space=0,split=1,delta=2
+     7                           	psect	text1,local,class=CODE,space=0,merge=1,delta=2
+     8                           	psect	text2,local,class=CODE,space=0,merge=1,delta=2
+     9                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    10                           	dabs	1,0x7E,2
+    11     0000                     
+    12                           ; Generated 12/10/2023 GMT
+    13                           ; 
+    14                           ; Copyright © 2023, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    15                           ; All rights reserved.
+    16                           ; 
+    17                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    18                           ; 
+    19                           ; Redistribution and use in source and binary forms, with or without modification, are
+    20                           ; permitted provided that the following conditions are met:
+    21                           ; 
+    22                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    23                           ;        conditions and the following disclaimer.
+    24                           ; 
+    25                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    26                           ;        of conditions and the following disclaimer in the documentation and/or other
+    27                           ;        materials provided with the distribution. Publication is not required when
+    28                           ;        this file is used in an embedded application.
+    29                           ; 
+    30                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    31                           ;        software without specific prior written permission.
+    32                           ; 
+    33                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    34                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    35                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    36                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    37                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    38                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    39                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    40                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    41                           ; 
+    42                           ; 
+    43                           ; Code-generator required, PIC16F877A Definitions
+    44                           ; 
+    45                           ; SFR Addresses
+    46     0004                     fsr             equ	4
+    47     0004                     fsr0            equ	4
+    48     0000                     indf            equ	0
+    49     0000                     indf0           equ	0
+    50     0002                     pc              equ	2
+    51     0002                     pcl             equ	2
+    52     000A                     pclath          equ	10
+    53     0003                     status          equ	3
+    54     0000                     INDF            equ	0	;# 
+    55     0001                     TMR0            equ	1	;# 
+    56     0002                     PCL             equ	2	;# 
+    57     0003                     STATUS          equ	3	;# 
+    58     0004                     FSR             equ	4	;# 
+    59     0005                     PORTA           equ	5	;# 
+    60     0006                     PORTB           equ	6	;# 
+    61     0007                     PORTC           equ	7	;# 
+    62     0008                     PORTD           equ	8	;# 
+    63     0009                     PORTE           equ	9	;# 
+    64     000A                     PCLATH          equ	10	;# 
+    65     000B                     INTCON          equ	11	;# 
+    66     000C                     PIR1            equ	12	;# 
+    67     000D                     PIR2            equ	13	;# 
+    68     000E                     TMR1            equ	14	;# 
+    69     000E                     TMR1L           equ	14	;# 
+    70     000F                     TMR1H           equ	15	;# 
+    71     0010                     T1CON           equ	16	;# 
+    72     0011                     TMR2            equ	17	;# 
+    73     0012                     T2CON           equ	18	;# 
+    74     0013                     SSPBUF          equ	19	;# 
+    75     0014                     SSPCON          equ	20	;# 
+    76     0015                     CCPR1           equ	21	;# 
+    77     0015                     CCPR1L          equ	21	;# 
+    78     0016                     CCPR1H          equ	22	;# 
+    79     0017                     CCP1CON         equ	23	;# 
+    80     0018                     RCSTA           equ	24	;# 
+    81     0019                     TXREG           equ	25	;# 
+    82     001A                     RCREG           equ	26	;# 
+    83     001B                     CCPR2           equ	27	;# 
+    84     001B                     CCPR2L          equ	27	;# 
+    85     001C                     CCPR2H          equ	28	;# 
+    86     001D                     CCP2CON         equ	29	;# 
+    87     001E                     ADRESH          equ	30	;# 
+    88     001F                     ADCON0          equ	31	;# 
+    89     0081                     OPTION_REG      equ	129	;# 
+    90     0085                     TRISA           equ	133	;# 
+    91     0086                     TRISB           equ	134	;# 
+    92     0087                     TRISC           equ	135	;# 
+    93     0088                     TRISD           equ	136	;# 
+    94     0089                     TRISE           equ	137	;# 
+    95     008C                     PIE1            equ	140	;# 
+    96     008D                     PIE2            equ	141	;# 
+    97     008E                     PCON            equ	142	;# 
+    98     0091                     SSPCON2         equ	145	;# 
+    99     0092                     PR2             equ	146	;# 
+   100     0093                     SSPADD          equ	147	;# 
+   101     0094                     SSPSTAT         equ	148	;# 
+   102     0098                     TXSTA           equ	152	;# 
+   103     0099                     SPBRG           equ	153	;# 
+   104     009C                     CMCON           equ	156	;# 
+   105     009D                     CVRCON          equ	157	;# 
+   106     009E                     ADRESL          equ	158	;# 
+   107     009F                     ADCON1          equ	159	;# 
+   108     010C                     EEDATA          equ	268	;# 
+   109     010D                     EEADR           equ	269	;# 
+   110     010E                     EEDATH          equ	270	;# 
+   111     010F                     EEADRH          equ	271	;# 
+   112     018C                     EECON1          equ	396	;# 
+   113     018D                     EECON2          equ	397	;# 
+   114     0000                     INDF            equ	0	;# 
+   115     0001                     TMR0            equ	1	;# 
+   116     0002                     PCL             equ	2	;# 
+   117     0003                     STATUS          equ	3	;# 
+   118     0004                     FSR             equ	4	;# 
+   119     0005                     PORTA           equ	5	;# 
+   120     0006                     PORTB           equ	6	;# 
+   121     0007                     PORTC           equ	7	;# 
+   122     0008                     PORTD           equ	8	;# 
+   123     0009                     PORTE           equ	9	;# 
+   124     000A                     PCLATH          equ	10	;# 
+   125     000B                     INTCON          equ	11	;# 
+   126     000C                     PIR1            equ	12	;# 
+   127     000D                     PIR2            equ	13	;# 
+   128     000E                     TMR1            equ	14	;# 
+   129     000E                     TMR1L           equ	14	;# 
+   130     000F                     TMR1H           equ	15	;# 
+   131     0010                     T1CON           equ	16	;# 
+   132     0011                     TMR2            equ	17	;# 
+   133     0012                     T2CON           equ	18	;# 
+   134     0013                     SSPBUF          equ	19	;# 
+   135     0014                     SSPCON          equ	20	;# 
+   136     0015                     CCPR1           equ	21	;# 
+   137     0015                     CCPR1L          equ	21	;# 
+   138     0016                     CCPR1H          equ	22	;# 
+   139     0017                     CCP1CON         equ	23	;# 
+   140     0018                     RCSTA           equ	24	;# 
+   141     0019                     TXREG           equ	25	;# 
+   142     001A                     RCREG           equ	26	;# 
+   143     001B                     CCPR2           equ	27	;# 
+   144     001B                     CCPR2L          equ	27	;# 
+   145     001C                     CCPR2H          equ	28	;# 
+   146     001D                     CCP2CON         equ	29	;# 
+   147     001E                     ADRESH          equ	30	;# 
+   148     001F                     ADCON0          equ	31	;# 
+   149     0081                     OPTION_REG      equ	129	;# 
+   150     0085                     TRISA           equ	133	;# 
+   151     0086                     TRISB           equ	134	;# 
+   152     0087                     TRISC           equ	135	;# 
+   153     0088                     TRISD           equ	136	;# 
+   154     0089                     TRISE           equ	137	;# 
+   155     008C                     PIE1            equ	140	;# 
+   156     008D                     PIE2            equ	141	;# 
+   157     008E                     PCON            equ	142	;# 
+   158     0091                     SSPCON2         equ	145	;# 
+   159     0092                     PR2             equ	146	;# 
+   160     0093                     SSPADD          equ	147	;# 
+   161     0094                     SSPSTAT         equ	148	;# 
+   162     0098                     TXSTA           equ	152	;# 
+   163     0099                     SPBRG           equ	153	;# 
+   164     009C                     CMCON           equ	156	;# 
+   165     009D                     CVRCON          equ	157	;# 
+   166     009E                     ADRESL          equ	158	;# 
+   167     009F                     ADCON1          equ	159	;# 
+   168     010C                     EEDATA          equ	268	;# 
+   169     010D                     EEADR           equ	269	;# 
+   170     010E                     EEDATH          equ	270	;# 
+   171     010F                     EEADRH          equ	271	;# 
+   172     018C                     EECON1          equ	396	;# 
+   173     018D                     EECON2          equ	397	;# 
+   174     000B                     _INTCONbits     set	11
+   175     0008                     _PORTD          set	8
+   176     0030                     _RB0            set	48
+   177     0033                     _RB3            set	51
+   178     0032                     _RB2            set	50
+   179     0031                     _RB1            set	49
+   180     0088                     _TRISD          set	136
+   181     0086                     _TRISB          set	134
+   182     010C                     _EEDATA         set	268
+   183     010D                     _EEADR          set	269
+   184     018D                     _EECON2         set	397
+   185     018C                     _EECON1bits     set	396
+   186                           
+   187                           	psect	cinit
+   188     07FC                     start_initialization:	
+   189                           ; #config settings
+   190                           
+   191     07FC                     __initialization:
+   192     07FC                     end_of_initialization:	
+   193                           ;End of C runtime variable initialization code
+   194                           
+   195     07FC                     __end_of__initialization:
+   196     07FC  0183               	clrf	3
+   197     07FD  120A  118A  2F6D   	ljmp	_main	;jump to C main() function
+   198                           
+   199                           	psect	cstackCOMMON
+   200     0070                     __pcstackCOMMON:
+   201     0070                     ?_eeprom_write:
+   202     0070                     ?_eeprom_read:	
+   203                           ; 1 bytes @ 0x0
+   204                           
+   205     0070                     ?_main:	
+   206                           ; 1 bytes @ 0x0
+   207                           
+   208     0070                     eeprom_write@data:	
+   209                           ; 1 bytes @ 0x0
+   210                           
+   211     0070                     eeprom_read@address:	
+   212                           ; 1 bytes @ 0x0
+   213                           
+   214     0070                     ??_eeprom_read:	
+   215                           ; 1 bytes @ 0x0
+   216                           
+   217                           
+   218                           ; 1 bytes @ 0x0
+   219     0070                     	ds	1
+   220     0071                     eeprom_write@address:
+   221     0071                     eeprom_read@data:	
+   222                           ; 1 bytes @ 0x1
+   223                           
+   224     0071                     ??_eeprom_write:	
+   225                           ; 1 bytes @ 0x1
+   226                           
+   227                           
+   228                           ; 1 bytes @ 0x1
+   229     0071                     	ds	1
+   230     0072                     ??_main:
+   231                           
+   232                           ; 1 bytes @ 0x2
+   233     0072                     	ds	3
+   234     0075                     main@i:
+   235                           
+   236                           ; 1 bytes @ 0x5
+   237     0075                     	ds	1
+   238     0076                     main@address:
+   239                           
+   240                           ; 1 bytes @ 0x6
+   241     0076                     	ds	1
+   242                           
+   243                           	psect	maintext
+   244     076D                     __pmaintext:	
+   245 ;;
+   246 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   247 ;;
+   248 ;; *************** function _main *****************
+   249 ;; Defined at:
+   250 ;;		line 26 in file "main.c"
+   251 ;; Parameters:    Size  Location     Type
+   252 ;;		None
+   253 ;; Auto vars:     Size  Location     Type
+   254 ;;  i               1    5[COMMON] unsigned char 
+   255 ;;  address         1    6[COMMON] unsigned char 
+   256 ;; Return value:  Size  Location     Type
+   257 ;;                  1    wreg      void 
+   258 ;; Registers used:
+   259 ;;		wreg, status,2, status,0, pclath, cstack
+   260 ;; Tracked objects:
+   261 ;;		On entry : B00/0
+   262 ;;		On exit  : 0/0
+   263 ;;		Unchanged: 0/0
+   264 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   265 ;;      Params:         0       0       0       0       0
+   266 ;;      Locals:         2       0       0       0       0
+   267 ;;      Temps:          3       0       0       0       0
+   268 ;;      Totals:         5       0       0       0       0
+   269 ;;Total ram usage:        5 bytes
+   270 ;; Hardware stack levels required when called: 1
+   271 ;; This function calls:
+   272 ;;		_eeprom_read
+   273 ;;		_eeprom_write
+   274 ;; This function is called by:
+   275 ;;		Startup code after reset
+   276 ;; This function uses a non-reentrant model
+   277 ;;
+   278                           
+   279     076D                     _main:	
+   280                           ;psect for function _main
+   281                           
+   282     076D                     l698:	
+   283                           ;incstack = 0
+   284                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   285                           
+   286                           
+   287                           ;main.c: 29:     TRISB = 0xFF;
+   288     076D  30FF               	movlw	255
+   289     076E  1683               	bsf	3,5	;RP0=1, select bank1
+   290     076F  1303               	bcf	3,6	;RP1=0, select bank1
+   291     0770  0086               	movwf	6	;volatile
+   292     0771                     l700:
+   293                           
+   294                           ;main.c: 30:     TRISD = 0X00;
+   295     0771  0188               	clrf	8	;volatile
+   296                           
+   297                           ;main.c: 31:     PORTD = 0X00;
+   298     0772  1283               	bcf	3,5	;RP0=0, select bank0
+   299     0773  1303               	bcf	3,6	;RP1=0, select bank0
+   300     0774  0188               	clrf	8	;volatile
+   301     0775                     l702:
+   302                           
+   303                           ;main.c: 39:         if(RB1) {
+   304     0775  1283               	bcf	3,5	;RP0=0, select bank0
+   305     0776  1303               	bcf	3,6	;RP1=0, select bank0
+   306     0777  1C86               	btfss	6,1	;volatile
+   307     0778  2F7A               	goto	u91
+   308     0779  2F7B               	goto	u90
+   309     077A                     u91:
+   310     077A  2F92               	goto	l710
+   311     077B                     u90:
+   312     077B                     l704:
+   313                           
+   314                           ;main.c: 40:             eeprom_write(address++, 3);
+   315     077B  3003               	movlw	3
+   316     077C  00F0               	movwf	eeprom_write@data
+   317     077D  0876               	movf	main@address,w
+   318     077E  120A  118A  2752  120A  118A  	fcall	_eeprom_write
+   319     0783                     l706:
+   320     0783  3001               	movlw	1
+   321     0784  07F6               	addwf	main@address,f
+   322     0785                     l708:
+   323                           
+   324                           ;main.c: 41:             _delay((unsigned long)((500)*(4000000/4000.0)));
+   325     0785  3003               	movlw	3
+   326     0786  00F4               	movwf	??_main+2
+   327     0787  308A               	movlw	138
+   328     0788  00F3               	movwf	??_main+1
+   329     0789  3055               	movlw	85
+   330     078A  00F2               	movwf	??_main
+   331     078B                     u157:
+   332     078B  0BF2               	decfsz	??_main,f
+   333     078C  2F8B               	goto	u157
+   334     078D  0BF3               	decfsz	??_main+1,f
+   335     078E  2F8B               	goto	u157
+   336     078F  0BF4               	decfsz	??_main+2,f
+   337     0790  2F8B               	goto	u157
+   338     0791  2F92               	nop2
+   339     0792                     l710:
+   340                           
+   341                           ;main.c: 46:         if(RB2) {
+   342     0792  1283               	bcf	3,5	;RP0=0, select bank0
+   343     0793  1303               	bcf	3,6	;RP1=0, select bank0
+   344     0794  1D06               	btfss	6,2	;volatile
+   345     0795  2F97               	goto	u101
+   346     0796  2F98               	goto	u100
+   347     0797                     u101:
+   348     0797  2FAF               	goto	l718
+   349     0798                     u100:
+   350     0798                     l712:
+   351                           
+   352                           ;main.c: 47:             eeprom_write(address++, 5);
+   353     0798  3005               	movlw	5
+   354     0799  00F0               	movwf	eeprom_write@data
+   355     079A  0876               	movf	main@address,w
+   356     079B  120A  118A  2752  120A  118A  	fcall	_eeprom_write
+   357     07A0                     l714:
+   358     07A0  3001               	movlw	1
+   359     07A1  07F6               	addwf	main@address,f
+   360     07A2                     l716:
+   361                           
+   362                           ;main.c: 48:             _delay((unsigned long)((500)*(4000000/4000.0)));
+   363     07A2  3003               	movlw	3
+   364     07A3  00F4               	movwf	??_main+2
+   365     07A4  308A               	movlw	138
+   366     07A5  00F3               	movwf	??_main+1
+   367     07A6  3055               	movlw	85
+   368     07A7  00F2               	movwf	??_main
+   369     07A8                     u167:
+   370     07A8  0BF2               	decfsz	??_main,f
+   371     07A9  2FA8               	goto	u167
+   372     07AA  0BF3               	decfsz	??_main+1,f
+   373     07AB  2FA8               	goto	u167
+   374     07AC  0BF4               	decfsz	??_main+2,f
+   375     07AD  2FA8               	goto	u167
+   376     07AE  2FAF               	nop2
+   377     07AF                     l718:
+   378                           
+   379                           ;main.c: 53:         if(RB3) {
+   380     07AF  1283               	bcf	3,5	;RP0=0, select bank0
+   381     07B0  1303               	bcf	3,6	;RP1=0, select bank0
+   382     07B1  1D86               	btfss	6,3	;volatile
+   383     07B2  2FB4               	goto	u111
+   384     07B3  2FB5               	goto	u110
+   385     07B4                     u111:
+   386     07B4  2FCC               	goto	l726
+   387     07B5                     u110:
+   388     07B5                     l720:
+   389                           
+   390                           ;main.c: 54:             eeprom_write(address++, 7);
+   391     07B5  3007               	movlw	7
+   392     07B6  00F0               	movwf	eeprom_write@data
+   393     07B7  0876               	movf	main@address,w
+   394     07B8  120A  118A  2752  120A  118A  	fcall	_eeprom_write
+   395     07BD                     l722:
+   396     07BD  3001               	movlw	1
+   397     07BE  07F6               	addwf	main@address,f
+   398     07BF                     l724:
+   399                           
+   400                           ;main.c: 55:             _delay((unsigned long)((500)*(4000000/4000.0)));
+   401     07BF  3003               	movlw	3
+   402     07C0  00F4               	movwf	??_main+2
+   403     07C1  308A               	movlw	138
+   404     07C2  00F3               	movwf	??_main+1
+   405     07C3  3055               	movlw	85
+   406     07C4  00F2               	movwf	??_main
+   407     07C5                     u177:
+   408     07C5  0BF2               	decfsz	??_main,f
+   409     07C6  2FC5               	goto	u177
+   410     07C7  0BF3               	decfsz	??_main+1,f
+   411     07C8  2FC5               	goto	u177
+   412     07C9  0BF4               	decfsz	??_main+2,f
+   413     07CA  2FC5               	goto	u177
+   414     07CB  2FCC               	nop2
+   415     07CC                     l726:
+   416                           
+   417                           ;main.c: 60:         if(address == 3)
+   418     07CC  3003               	movlw	3
+   419     07CD  0676               	xorwf	main@address,w
+   420     07CE  1D03               	btfss	3,2
+   421     07CF  2FD1               	goto	u121
+   422     07D0  2FD2               	goto	u120
+   423     07D1                     u121:
+   424     07D1  2FD3               	goto	l730
+   425     07D2                     u120:
+   426     07D2                     l728:
+   427                           
+   428                           ;main.c: 61:             address = 0;
+   429     07D2  01F6               	clrf	main@address
+   430     07D3                     l730:
+   431                           
+   432                           ;main.c: 63:         if(RB0 == 1) {
+   433     07D3  1283               	bcf	3,5	;RP0=0, select bank0
+   434     07D4  1303               	bcf	3,6	;RP1=0, select bank0
+   435     07D5  1C06               	btfss	6,0	;volatile
+   436     07D6  2FD8               	goto	u131
+   437     07D7  2FD9               	goto	u130
+   438     07D8                     u131:
+   439     07D8  2F75               	goto	l702
+   440     07D9                     u130:
+   441     07D9                     l732:
+   442                           
+   443                           ;main.c: 65:             for(uint8_t i = 0; i < 3; i++) {
+   444     07D9  01F5               	clrf	main@i
+   445     07DA                     l738:
+   446                           
+   447                           ;main.c: 67:                 PORTD = eeprom_read(i);
+   448     07DA  0875               	movf	main@i,w
+   449     07DB  120A  118A  2743  120A  118A  	fcall	_eeprom_read
+   450     07E0  1283               	bcf	3,5	;RP0=0, select bank0
+   451     07E1  1303               	bcf	3,6	;RP1=0, select bank0
+   452     07E2  0088               	movwf	8	;volatile
+   453     07E3                     l740:
+   454                           
+   455                           ;main.c: 68:                 _delay((unsigned long)((1000)*(4000000/4000.0)));
+   456     07E3  3006               	movlw	6
+   457     07E4  00F4               	movwf	??_main+2
+   458     07E5  3013               	movlw	19
+   459     07E6  00F3               	movwf	??_main+1
+   460     07E7  30AD               	movlw	173
+   461     07E8  00F2               	movwf	??_main
+   462     07E9                     u187:
+   463     07E9  0BF2               	decfsz	??_main,f
+   464     07EA  2FE9               	goto	u187
+   465     07EB  0BF3               	decfsz	??_main+1,f
+   466     07EC  2FE9               	goto	u187
+   467     07ED  0BF4               	decfsz	??_main+2,f
+   468     07EE  2FE9               	goto	u187
+   469     07EF  2FF0               	nop2
+   470     07F0                     l742:
+   471                           
+   472                           ;main.c: 69:             }
+   473     07F0  3001               	movlw	1
+   474     07F1  07F5               	addwf	main@i,f
+   475     07F2                     l744:
+   476     07F2  3003               	movlw	3
+   477     07F3  0275               	subwf	main@i,w
+   478     07F4  1C03               	skipc
+   479     07F5  2FF7               	goto	u141
+   480     07F6  2FF8               	goto	u140
+   481     07F7                     u141:
+   482     07F7  2FDA               	goto	l738
+   483     07F8                     u140:
+   484     07F8  2F75               	goto	l702
+   485     07F9  120A  118A  2800   	ljmp	start
+   486     07FC                     __end_of_main:
+   487                           
+   488                           	psect	text1
+   489     0752                     __ptext1:	
+   490 ;; *************** function _eeprom_write *****************
+   491 ;; Defined at:
+   492 ;;		line 76 in file "main.c"
+   493 ;; Parameters:    Size  Location     Type
+   494 ;;  address         1    wreg     unsigned char 
+   495 ;;  data            1    0[COMMON] unsigned char 
+   496 ;; Auto vars:     Size  Location     Type
+   497 ;;  address         1    1[COMMON] unsigned char 
+   498 ;; Return value:  Size  Location     Type
+   499 ;;                  1    wreg      void 
+   500 ;; Registers used:
+   501 ;;		wreg
+   502 ;; Tracked objects:
+   503 ;;		On entry : 0/0
+   504 ;;		On exit  : 0/0
+   505 ;;		Unchanged: 0/0
+   506 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   507 ;;      Params:         1       0       0       0       0
+   508 ;;      Locals:         1       0       0       0       0
+   509 ;;      Temps:          0       0       0       0       0
+   510 ;;      Totals:         2       0       0       0       0
+   511 ;;Total ram usage:        2 bytes
+   512 ;; Hardware stack levels used: 1
+   513 ;; This function calls:
+   514 ;;		Nothing
+   515 ;; This function is called by:
+   516 ;;		_main
+   517 ;; This function uses a non-reentrant model
+   518 ;;
+   519                           
+   520     0752                     _eeprom_write:	
+   521                           ;psect for function _eeprom_write
+   522                           
+   523                           
+   524                           ;incstack = 0
+   525                           ; Regs used in _eeprom_write: [wreg]
+   526                           ;eeprom_write@address stored from wreg
+   527     0752  00F1               	movwf	eeprom_write@address
+   528     0753                     l676:
+   529     0753                     l48:	
+   530                           ;main.c: 78:     while(EECON1bits.WR);
+   531                           
+   532     0753  1683               	bsf	3,5	;RP0=1, select bank3
+   533     0754  1703               	bsf	3,6	;RP1=1, select bank3
+   534     0755  188C               	btfsc	12,1	;volsfr
+   535     0756  2F58               	goto	u81
+   536     0757  2F59               	goto	u80
+   537     0758                     u81:
+   538     0758  2F53               	goto	l48
+   539     0759                     u80:
+   540     0759                     l678:
+   541                           
+   542                           ;main.c: 79:     EEADR = address;
+   543     0759  0871               	movf	eeprom_write@address,w
+   544     075A  1283               	bcf	3,5	;RP0=0, select bank2
+   545     075B  1703               	bsf	3,6	;RP1=1, select bank2
+   546     075C  008D               	movwf	13	;volatile
+   547                           
+   548                           ;main.c: 80:     EEDATA = data;
+   549     075D  0870               	movf	eeprom_write@data,w
+   550     075E  008C               	movwf	12	;volatile
+   551     075F                     l680:
+   552                           
+   553                           ;main.c: 81:     EECON1bits.EEPGD = 0;
+   554     075F  1683               	bsf	3,5	;RP0=1, select bank3
+   555     0760  1703               	bsf	3,6	;RP1=1, select bank3
+   556     0761  138C               	bcf	12,7	;volsfr
+   557     0762                     l682:
+   558                           
+   559                           ;main.c: 82:     EECON1bits.WREN = 1;
+   560     0762  150C               	bsf	12,2	;volsfr
+   561     0763                     l684:
+   562                           
+   563                           ;main.c: 83:     INTCONbits.GIE = 0;
+   564     0763  138B               	bcf	11,7	;volatile
+   565     0764                     l686:
+   566                           
+   567                           ;main.c: 84:     EECON2 = 0x55;
+   568     0764  3055               	movlw	85
+   569     0765  008D               	movwf	13	;volsfr
+   570     0766                     l688:
+   571                           
+   572                           ;main.c: 85:     EECON2 = 0xAA;
+   573     0766  30AA               	movlw	170
+   574     0767  008D               	movwf	13	;volsfr
+   575     0768                     l690:
+   576                           
+   577                           ;main.c: 86:     EECON1bits.WR = 1;
+   578     0768  148C               	bsf	12,1	;volsfr
+   579     0769                     l692:
+   580                           
+   581                           ;main.c: 87:     INTCONbits.GIE = 1;
+   582     0769  178B               	bsf	11,7	;volatile
+   583     076A                     l694:
+   584                           
+   585                           ;main.c: 88:     EECON1bits.WREN = 0;
+   586     076A  110C               	bcf	12,2	;volsfr
+   587     076B                     l696:
+   588                           
+   589                           ;main.c: 89:     EECON1bits.WR = 0;
+   590     076B  108C               	bcf	12,1	;volsfr
+   591     076C                     l51:
+   592     076C  0008               	return
+   593     076D                     __end_of_eeprom_write:
+   594                           
+   595                           	psect	text2
+   596     0743                     __ptext2:	
+   597 ;; *************** function _eeprom_read *****************
+   598 ;; Defined at:
+   599 ;;		line 93 in file "main.c"
+   600 ;; Parameters:    Size  Location     Type
+   601 ;;  address         1    wreg     unsigned char 
+   602 ;; Auto vars:     Size  Location     Type
+   603 ;;  address         1    0[COMMON] unsigned char 
+   604 ;;  data            1    1[COMMON] unsigned char 
+   605 ;; Return value:  Size  Location     Type
+   606 ;;                  1    wreg      unsigned char 
+   607 ;; Registers used:
+   608 ;;		wreg
+   609 ;; Tracked objects:
+   610 ;;		On entry : 0/0
+   611 ;;		On exit  : 0/0
+   612 ;;		Unchanged: 0/0
+   613 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   614 ;;      Params:         0       0       0       0       0
+   615 ;;      Locals:         2       0       0       0       0
+   616 ;;      Temps:          0       0       0       0       0
+   617 ;;      Totals:         2       0       0       0       0
+   618 ;;Total ram usage:        2 bytes
+   619 ;; Hardware stack levels used: 1
+   620 ;; This function calls:
+   621 ;;		Nothing
+   622 ;; This function is called by:
+   623 ;;		_main
+   624 ;; This function uses a non-reentrant model
+   625 ;;
+   626                           
+   627     0743                     _eeprom_read:	
+   628                           ;psect for function _eeprom_read
+   629                           
+   630                           
+   631                           ;incstack = 0
+   632                           ; Regs used in _eeprom_read: [wreg]
+   633                           ;eeprom_read@address stored from wreg
+   634     0743  00F0               	movwf	eeprom_read@address
+   635     0744                     l620:
+   636                           
+   637                           ;main.c: 95:     uint8_t data;;main.c: 96:     EEADR = address;
+   638     0744  0870               	movf	eeprom_read@address,w
+   639     0745  1283               	bcf	3,5	;RP0=0, select bank2
+   640     0746  1703               	bsf	3,6	;RP1=1, select bank2
+   641     0747  008D               	movwf	13	;volatile
+   642     0748                     l622:
+   643                           
+   644                           ;main.c: 97:     EECON1bits.EEPGD = 0;
+   645     0748  1683               	bsf	3,5	;RP0=1, select bank3
+   646     0749  1703               	bsf	3,6	;RP1=1, select bank3
+   647     074A  138C               	bcf	12,7	;volsfr
+   648     074B                     l624:
+   649                           
+   650                           ;main.c: 98:     EECON1bits.RD = 1;
+   651     074B  140C               	bsf	12,0	;volsfr
+   652                           
+   653                           ;main.c: 99:     data = EEDATA;
+   654     074C  1283               	bcf	3,5	;RP0=0, select bank2
+   655     074D  1703               	bsf	3,6	;RP1=1, select bank2
+   656     074E  080C               	movf	12,w	;volatile
+   657     074F  00F1               	movwf	eeprom_read@data
+   658                           
+   659                           ;main.c: 100:     return data;
+   660     0750  0871               	movf	eeprom_read@data,w
+   661     0751                     l54:
+   662     0751  0008               	return
+   663     0752                     __end_of_eeprom_read:
+   664     0002                     ___latbits      equ	2
+   665     007E                     btemp           set	126	;btemp
+   666     007E                     wtemp0          set	126
+   667                           
+   668                           	psect	config
+   669                           
+   670                           ;Config register CONFIG @ 0x2007
+   671                           ;	Oscillator Selection bits
+   672                           ;	FOSC = XT, XT oscillator
+   673                           ;	Watchdog Timer Enable bit
+   674                           ;	WDTE = OFF, WDT disabled
+   675                           ;	Power-up Timer Enable bit
+   676                           ;	PWRTE = OFF, PWRT disabled
+   677                           ;	Brown-out Reset Enable bit
+   678                           ;	BOREN = ON, BOR enabled
+   679                           ;	Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit
+   680                           ;	LVP = OFF, RB3 is digital I/O, HV on MCLR must be used for programming
+   681                           ;	Data EEPROM Memory Code Protection bit
+   682                           ;	CPD = OFF, Data EEPROM code protection off
+   683                           ;	Flash Program Memory Write Enable bits
+   684                           ;	WRT = OFF, Write protection off; all program memory may be written to by EECON control
+   685                           ;	In-Circuit Debugger Mode bit
+   686                           ;	DEBUG = 0x1, unprogrammed default
+   687                           ;	Flash Program Memory Code Protection bit
+   688                           ;	CP = OFF, Code protection off
+   689     2007                     	org	8199
+   690     2007  3F79               	dw	16249
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      7       7
+    BANK0            80      0       0
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _main->_eeprom_read
+    _main->_eeprom_write
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 5     5      0     244
+                                              2 COMMON     5     5      0
+                        _eeprom_read
+                       _eeprom_write
+ ---------------------------------------------------------------------------------
+ (1) _eeprom_write                                         2     1      1      54
+                                              0 COMMON     2     1      1
+ ---------------------------------------------------------------------------------
+ (1) _eeprom_read                                          2     2      0      30
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _eeprom_read
+   _eeprom_write
+
+Address spaces:
+Name               Size   Autos  Total    Usage
+BITCOMMON           14      0       0      0.0%
+BITBANK0            80      0       0      0.0%
+BITBANK1            80      0       0      0.0%
+BITBANK3            96      0       0      0.0%
+BITBANK2            96      0       0      0.0%
+COMMON              14      7       7     50.0%
+BANK0               80      0       0      0.0%
+BANK1               80      0       0      0.0%
+BANK3               96      0       0      0.0%
+BANK2               96      0       0      0.0%
+STACK                0      0       0      0.0%
+DATA                 0      0       7      0.0%
+
+
+Microchip Technology PIC Macro Assembler V3.00 build 20241204225717 
+Symbol Table                                                                                   Tue Mar 18 22:12:18 2025
+
+                     l51 076C                       l54 0751                       l48 0753  
+                     u80 0759                       u81 0758                       u90 077B  
+                     u91 077A                      l620 0744                      l700 0771  
+                    l622 0748                      l710 0792                      l702 0775  
+                    l624 074B                      l720 07B5                      l712 0798  
+                    l704 077B                      l730 07D3                      l722 07BD  
+                    l714 07A0                      l706 0783                      l740 07E3  
+                    l732 07D9                      l724 07BF                      l716 07A2  
+                    l708 0785                      l742 07F0                      l726 07CC  
+                    l718 07AF                      l680 075F                      l744 07F2  
+                    l728 07D2                      l690 0768                      l682 0762  
+                    l738 07DA                      l692 0769                      l684 0763  
+                    l676 0753                      l694 076A                      l686 0764  
+                    l678 0759                      l696 076B                      l688 0766  
+                    l698 076D                      _RB0 0030                      _RB1 0031  
+                    _RB2 0032                      _RB3 0033                      u100 0798  
+                    u101 0797                      u110 07B5                      u111 07B4  
+                    u120 07D2                      u121 07D1                      u130 07D9  
+                    u131 07D8                      u140 07F8                      u141 07F7  
+                    u157 078B                      u167 07A8                      u177 07C5  
+                    u187 07E9       eeprom_read@address 0070              main@address 0076  
+         ??_eeprom_write 0071                     _main 076D                     btemp 007E  
+                   start 0000                    ?_main 0070                    _EEADR 010D  
+                  _PORTD 0008                    _TRISB 0086                    _TRISD 0088  
+                  main@i 0075                    status 0003                    wtemp0 007E  
+        __initialization 07FC             __end_of_main 07FC                   ??_main 0072  
+                 _EEDATA 010C                   _EECON2 018D      eeprom_write@address 0071  
+   __end_of_eeprom_write 076D  __end_of__initialization 07FC          eeprom_read@data 0071  
+         __pcstackCOMMON 0070               __pmaintext 076D                  __ptext1 0752  
+                __ptext2 0743     end_of_initialization 07FC             _eeprom_write 0752  
+          ??_eeprom_read 0070      start_initialization 07FC      __end_of_eeprom_read 0752  
+              ___latbits 0002         eeprom_write@data 0070              _eeprom_read 0743  
+             _EECON1bits 018C               _INTCONbits 000B            ?_eeprom_write 0070  
+           ?_eeprom_read 0070  

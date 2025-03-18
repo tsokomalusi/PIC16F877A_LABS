@@ -1,0 +1,25 @@
+/* Suppose we're building a complex systems and further suppose that the interrupts were interrupted for whatever reason.
+Then it is almost impossible to re-enable interrupts after each EEPROM write operation. The EEPPROM Write technique
+will work flawlessly for small and simple projects. Another alternative is to save the state of the GIE bit and restoring
+it back after each EEPROM write operation */
+
+
+void eeprom_write(uint8_t address, uint8_t data) {
+
+  uint8_t GIE_State;           // Variable to store the lat GIE state
+  while(EECON1bits.WR);        // Waits until the last attemt to write is finished
+  EEADR = address;             // Writes the address to which We'll write the data
+  EEDATA = data;               // Writes the data to be saved
+  EECON1bits.EEPGD = 0;        // Cleared to point to EEPROM data memory not Program memory
+  EECON1bits.WREN = 1;         // Enables the write operation
+  GIE_State = GIE;             // Store the GIE state
+  INTCONbits.GIE = 0;          // Disable all interrupts unitl the writing operation is done
+  EECON2 = 0X55;               // Part of the writing mechanism
+  EECON2 = 0XAA;               // Part of the writing mechanism
+  EECON1bits.WR = 1;           // Part of the writing mechanism
+  GIE = GIE_State;             // Restore the interrupts last state
+  EECON1bits.WREN = 0;         // Disable the write operation
+  EECON1bits.WR = 0;           // Ready for next write operation
+
+
+}
