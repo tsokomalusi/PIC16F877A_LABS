@@ -124,3 +124,10 @@ actually is going on. Although LED dimming may not be running in real time in so
 ## Schematic capture and Proteus simulation
 ![Lab14](https://github.com/user-attachments/assets/2532c72e-100b-40b2-967e-ed4453572073)
 
+## Lab 15: Internal EEPROM
+This lab is all about experimenting with PIC internal EEPROM for both reading and writing data to EEPROM memory.
+A firmware will be developed that makes it possible to store some variables in the EEPROM memory then retrieve them later after hardware restart or reset
+for the MCU. This concepts is tested with the use of couple of SPST push buttons and LEDS.
+## Schematic capture and Proteus simulation
+![lab15](https://github.com/user-attachments/assets/c4e6e42d-0c44-4929-8ab3-abb4a17ceb07)
+
